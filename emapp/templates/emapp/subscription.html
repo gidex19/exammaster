@@ -1,0 +1,42 @@
+{% extends 'emapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main-content %}
+
+<div class="container top-space-large ">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 top-space">
+                <div class="img">
+                    <img src="{% static 'emapp/images/undraw_pay_online_b1hk.svg' %}" >
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-4 top-space-large bg-light p-4">
+                <p class="text-capitalize large"><b>Choose A plan that suits you</b></p>
+                <p class="text-capitalize small">Payments Can Be Made Online (Using ATM Card) or Via Bank Branch.</p>
+                <p class="text-capitalize small">For Online payment, Subscription will be activated immediately after payment</p>
+                <p class="text-capitalize small">For all payments made via Bank Branch, Your subscription will be activated immediately after we
+                    recieve a text messsage and bank alert verifying that the payment has been made</p>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 price-div bg-green">
+                <h5 class="text-center">Pay Using ATM Card</h5>
+                <div class="text-center">
+                    <a href="{% url 'paywithcard' %}" class="pricebtn btn btn-outline-dark">Pay Now</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 price-div bg-blue">
+                <h5 class="text-center">Pay Via Bank Branch</h5>
+                <div class="text-center">
+                    <a href="{% url 'paywithbank' %}" class="pricebtn btn btn-outline-dark">Pay Now</a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+{% endblock main-content %}

@@ -1,0 +1,68 @@
+[
+    {
+        "question": "What is Your Name",
+        "options": {
+            "A": "Gideon Ozuluoha",
+            "B": "Khadeejat Abdulmaleek",
+            "C": "Frankie Jordans",
+            "D": "Ezekiel Lambert"
+        },
+        "img": null,
+        "answer": "A"
+    },
+    {
+        "question": "What is the Name of The president of United States Of America",
+        "options": {
+            "A": "Donald Trump",
+            "B": "Barrack Obama",
+            "C": "Frankie White",
+            "D": "Danny Whizbang"
+        },
+        "img": null,
+        "answer": "A"
+    },
+    {
+        "question": "How Many States Are in Nigeria Nigeria",
+        "options": {
+            "A": "26",
+            "B": "16",
+            "C": "35",
+            "D": "36"
+        },
+        "img": null,
+        "answer": "D"
+    },
+    {
+        "question": "Who is the Current President Of Nigeria",
+        "options": {
+            "A": "Muhammadu Buhari",
+            "B": "Goodluck Ebele Jonathan",
+            "C": "Ibrahim Badamasi Babangida",
+            "D": "Olusegun Obasanjo"
+        },
+        "img": null,
+        "answer": "A"
+    },
+    {
+        "question": "What is a Noun",
+        "options": {
+            "A": "An action word",
+            "B": "A name of person, animal, place or things",
+            "C": "A word used to describe myself",
+            "D": "A word used to describe someone that really close to you"
+        },
+        "img": null,
+        "answer": "B"
+    },
+    {
+        "question": "What is a verb",
+        "options": {
+            "A": "A name of person, animal, place or things",
+            "B": "An action word",
+            "C": "A word used to describe myself",
+            "D": "A word used to describe someone that really close to you"
+        },
+        "img": null,
+        "answer": "B"
+    }
+]

@@ -1,0 +1,121 @@
+{% extends 'emapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main-content %}
+
+<div class="container top-space-large ">
+        <div class="row mt-4">
+            <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 mt-2 m-auto p-4" id="main-div">
+
+                <div>
+                <select name="duration" class="select" id="select" >
+                    <option value="10">
+                        10mins - 20 Questions
+                    </option>
+                    <option value="20">20mins - 40 Questions</option>
+                    <option value="30">30mins - 60 Questions</option>
+                </select><br>
+                <div class="bg-blue p-3"><input type="radio" value="Accounting" name="subjects" class="subjectsrad">
+                <label for="1">Accounting / Principle of Accounts</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Agricultural Science" name="subjects" class="subjectsrad">
+                <label for="1">Agricultural Science</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="Arabic" name="subjects" class="subjectsrad">
+                <label for="1">Arabic</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Arts" name="subjects" class="subjectsrad">
+                    <label for="1">Arts</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="Biology" name="subjects" class="subjectsrad">
+                    <label for="1">Biology</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Chemistry" name="subjects" class="subjectsrad">
+                    <label for="1">Chemistry</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="CRS" name="subjects" class="subjectsrad">
+                <label for="1">Christian Religious Studies</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Commerce" name="subjects" class="subjectsrad">
+                <label for="1">Commerce</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="Economics" name="subjects" class="subjectsrad">
+                <label for="1">Economics</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="English Language" name="subjects" class="subjectsrad">
+                <label for="1">English Language</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="French" name="subjects" class="subjectsrad">
+                <label for="1">French</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Geography" name="subjects" class="subjectsrad">
+                <label for="1">Geography</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="Government" name="subjects" class="subjectsrad">
+                <label for="1">Government</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Hausa" name="subjects" class="subjectsrad">
+                <label for="1">Hausa</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="History" name="subjects" class="subjectsrad">
+                <label for="1">History</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Home Economics" name="subjects" class="subjectsrad">
+                <label for="1">Home Economics</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="Igbo" name="subjects" class="subjectsrad">
+                <label for="1">Igbo</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="IRS" name="subjects" class="subjectsrad">
+                <label for="1">Islamic Religious Studies</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="Literature" name="subjects" class="subjectsrad">
+                <label for="1">Literature</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Mathematics" name="subjects" class="subjectsrad">
+                <label for="1">Mathematics</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="Music" name="subjects" class="subjectsrad">
+                <label for="1">Music</label><br></div>
+                <div class="bg-light p-3"><input type="radio" value="Physics" name="subjects" class="subjectsrad">
+                <label for="1">Physics</label><br></div>
+                <div class="bg-blue p-3"><input type="radio" value="Yoruba" name="subjects" class="subjectsrad">
+                    <label for="1">Yoruba</label><br></div>
+
+                <button class="btn btn-outline-info mt-4" id="submitbtn" type="button"> Start Test</button>
+            </form>
+
+
+            </div>
+        </div>
+            <div class="content" id="main-div2">
+            <div class="main-content">
+                <div class="p-3 positiondiv" id="positiondiv"></div>
+                <div id="time-div"> <button class="btn btn-info" id="timebtn"> Time Button </button></div>
+                <div id="info-panel">
+
+                </div><br>
+            <div class="question-div bg-light mt-4 p-4" id="questiondiv">
+
+            </div>
+            </div>
+            <div class="options" id="optionsdiv">
+
+            </div>
+            <div class="navbtns col-12 mb-4 p-3">
+                <button class="prev btn btn-info " id="prev"> Previous </button>
+                <button class="next btn btn-info" id="next"> Next </button>
+            </div><br>
+            <div class="navqstns p-3" id="navqstns">
+
+            </div>
+            </div>
+
+            <div class="content-result " id="main-div3">
+            <div class="col-xs-9 col-sm-8 col-md-6 col-lg-6 bg-blue" id="resultdiv">
+
+
+            </div>
+         </div>
+            <div class="correction-div" id="main-div4">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " id="answerdiv">
+                <input type="hidden" id="sub_url" data-url = "{% url 'subscription' %}"/>
+                <input type="hidden" id="static_url" data-url = "{% static 'js/english.json' %}"/>
+                </div>
+
+            </div>
+
+        </div>
+
+
+</div>
+
+{% endblock main-content %}
+
+
+    {% block js %}
+    <script src="{% static 'emapp/js/copy.js'%}"></script>
+
+    {% endblock js %}
+

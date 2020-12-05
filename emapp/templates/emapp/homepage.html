@@ -1,0 +1,93 @@
+{% extends 'emapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block header-content %}
+
+<div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 div-bg mb-4 pl-4">
+                    <h4 class="already-h4 text-dark ">Pass your Exams with Flying Colours</h4>
+                    <p class="text-capitalize small">Practice Makes Perfect | Practice JAMB CBT</p>
+                    <a class="btn scale btn-dark bg-btn mt-3 " href ="{% url 'cbtexam' %}">Take a Test</a>
+                    <a class="btn scale btn-dark bg-btn mt-3 ml-2 " href ="{% url 'login' %}">Login</a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mb-4 svg-div" >
+                    <div class="img mb-4">
+                    <img  src="{% static 'emapp/images/feeling_proud.svg' %}">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+{% endblock header-content %}
+
+{% block main-content %}
+    <div class="container jumbo mt-4" id="jumbo">
+        <div class="row m-3">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-4" >
+                <h3 class="mt-2 mb-4">Go For It!!!</h3>
+                <div class="bg-color3 ">
+                    <p class="large ">PRACTICE MAKES PERFECT</p>
+                    <p class="text-capitalize small">More Questions and Answers with necessary explanations in a Simple and Easily understandable fashion</p>
+
+                </div>
+                <div class="img mt-4">
+                    <img class="mt-4" src="{% static 'emapp/images/undraw_dev_focus_b9xo.svg' %}">
+                </div>
+
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-4" >
+                <h3 class="mt-2 mb-4">All Major Exams Are Covered Here</h3>
+                <div class="bg-color1">
+                    <p class="large">JAMB CBT EXAMS</p>
+                    <p class="text-capitalize small">Over 5000+ questions and answers available in CBT session</p>
+                    <a href="#" class="btn btn-outline-light btn sm">Take JAMB CBT</a>
+                </div>
+                <div class="bg-color2">
+                    <p class="large">WAEC CBT EXAMS</p>
+                    <p class="text-capitalize small">Over 6000+ questions and answers available in CBT session</p>
+                    <a href="#" class="btn btn-outline-light btn sm">Take WAEC CBT</a>
+                </div>
+                <div class="bg-color3">
+                    <p class="large">NABTEB CBT EXAMS</p>
+                    <p class="text-capitalize small">Over 5000+ questions and answers available in CBT session</p>
+                    <a href="#" class="btn btn-outline-light btn sm">Take NABTEB CBT</a>
+                </div>
+            </div>
+            <div class="curved-div top-space col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-4 bg-light" >
+                <h3 class="mt-2 mb-4">Why Choose ExamMaster???</h3>
+                <div >
+                    <ul class="text-capitalize small styled-list">
+                        <li>Over 50,000+ Questions And Answers for all Exams</li>
+                        <li>Explanations and solutions to Questions</li>
+                        <li>50% Cheaper with double Value</li>
+                        <li>Simple and Easy to Use Interface(Jamb Like)</li>
+                        <li>Unlocking of all Features Upon Subscription</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-4 top-space" >
+                <div class="img top-space mt-4 p-2">
+                    <h4 class="mt-4 mb-4" >Subscription</h4>
+                    <img src="{% static 'emapp/images/undraw_pay_online_b1hk.svg' %}" >
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-4 top-space" >
+                <div class="top-space mt-4 ">
+                    <h3 class="text-capitalize mt-4" ><b> Exam Master Subscription</b></h3>
+                    <p class="text-capitalize small mt-4">Subscribe to unlock all features and use all our available resources</p>
+                    <p class="text-capitalize small ">We have unlimited questions and answers available</p>
+                    <p>We can connect you to our nearby well trained tutors nationwide</p>
+                    <a href="{% url 'subscription' %}" class="btn btn-outline-dark">Subscribe Now</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock main-content %}

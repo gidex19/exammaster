@@ -1,0 +1,38 @@
+{% extends 'emapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main-content %}
+
+<div class="container top-space-large ">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bg-light mt-2">
+                <div class="curved-div text-center">
+                    <p class="text-capitalize large"><b>Pay With Card</b></p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 price-div bg-green">
+                <h5 class="text-center"><b>6 month Plan (N1000)</b></h5>
+
+            <p class="text-capitalize small">Get Full Access to features for 6 month</p>
+            <div class="text-center">
+            <a href="{% url 'semipay' %}" class="pricebtn btn btn-outline-dark mt-4">Pay Now</a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 price-div bg-blue">
+                <h5 class="text-center"><b>1 Year Plan (N1700)</b></h5>
+
+            <p class="text-capitalize small">Get Full Access to features for 1 Year</p>
+            <div class="text-center">
+            <a href="{% url 'fullpay' %}" class="pricebtn btn btn-outline-dark mt-4">Pay Now</a>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+
+
+{% endblock main-content %}
+
+

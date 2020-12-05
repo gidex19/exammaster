@@ -1,0 +1,34 @@
+{% extends 'emapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main-content %}
+
+<div class="container top-space-large ">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 m-auto bg-light">
+            <form method="POST" class="p-4">
+            <p class="small text-capitalize">Complete Form to Create your Account</p>
+                        {% csrf_token %}
+                      <div class="form-group" id="inputUsername">
+
+                        {{ form|crispy }}
+                      </div>
+                {% if messages %}
+                        {% for message in messages %}
+                    <div class="alert alert-{{message.tags }}">
+                        {{ message }}
+                    </div>
+                        {% endfor %}
+                        {% endif %}
+                <button class="btn btn-lg btn-outline-info btn-lg text-capitalize text-center mb-2" type="submit">Sign up</button>
+                      <div class="text-center">
+                          <a class="small mr-4" href="{% url 'login' %}">Login</a>
+                        <a class="small ml-4" href="#">Forgot password?</a></div>
+                    </form>
+
+            </div>
+        </div>
+</div>
+
+{% endblock main-content %}

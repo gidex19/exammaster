@@ -1,0 +1,100 @@
+{% load static %}
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"  type="text/css" href="{% static 'emapp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'emapp/css/front.css' %}" >
+    <title>Exam Prep Master</title>
+</head>
+<body>
+    <header class = header-img>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark  fixed-top collapse navbar-collapse">
+            <div class="logo-div"> <img class=" ml-4 logo" src="{% static 'emapp/images/e.png' %}"></div>
+            <div class="container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav ml-auto" >
+                    <a class="nav-item nav-link nav-anchor text-white m-1 " href="{% url 'homepage' %}">Home</a>
+                    <a class="nav-item nav-link nav-anchor text-white m-1 " href="{% url 'cbtexam' %}">Take Exam</a>
+                    <a class="nav-item nav-link nav-anchor text-white m-1 " href="#">About Us</a>
+                    {% if user.is_authenticated == True %}
+
+                        <a class="nav-item nav-link text-white btn btn-outline-info btn-sm m-1" href="{% url 'logout' %}">Logout</a>
+                        <a class="nav-item nav-link text-white btn btn-outline-info btn-sm m-1" href="{% url 'signup' %}">Sign Up</a>
+                        <a href="#" class="btn  btn-outline-info btn-sm"> {{ user.username }}</a>
+                    {% else %}
+                            <a class="nav-item nav-link text-white btn btn-outline-info btn-sm m-1" href="{% url 'login' %}">Login</a>
+                            <a class="nav-item nav-link text-white btn btn-outline-info btn-sm m-1" href="{% url 'signup' %}">Sign Up</a>
+
+                    {% endif %}
+
+              </div>
+            </div>
+            </div>
+        </nav>
+
+        {% block header-content %}
+
+          {% endblock %}
+
+    </header>
+    {% block main-content %}
+
+    {% endblock %}
+
+    <footer class="bg-footer bg-dark footer">
+        <div class="container footer-container col-12">
+            <div class="row m-0">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2 bg-dark p-2">
+                    <p><b>MENU</b></p>
+                    <a href="#" class="text-capitalize small anchor-block">Home</a>
+                    <a href="#" class="text-capitalize small anchor-block">Take Exam</a>
+                    <a href="#" class="text-capitalize small anchor-block">Sign Up</a>
+                    <a href="#" class="text-capitalize small anchor-block">Login</a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2 bg-dark p-2">
+                    <p><b>CONTACT US</b></p>
+                    <a href="#" class="text-capitalize small anchor-block">Facebook</a>
+                    <a href="#" class="text-capitalize small anchor-block">Instagram</a>
+                    <a href="#" class="text-capitalize small anchor-block">Twitter</a>
+                    <a href="#" class="text-capitalize small anchor-block">No.2 Tunga Road Behind Zenith Bank</a>
+
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2 bg-dark p-2">
+                    <p><b>ABOUT US</b></p>
+                    <p class="text-capitalize small ">Exammaster.com is a technology powered and success driven team that strives to make examination success guaranteed for all
+                        willing Nigerian Student
+                    </p>
+                    <p class="text-capitalize small ">We will continue to put in our best into this in order to ensure that students excel even as we excel. Lets fly together</p>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    {% block js %}
+
+{% endblock js %}
+
+
+
+</body>
+</html>
